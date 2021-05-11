@@ -78,6 +78,18 @@ namespace PetPickr.Services
                 return ctx.SaveChanges() == 1;
             }
         }
+        public bool DeleteShelter(int shelterId)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                    .Shelters
+                    .Single(e => e.ShelterId == shelterId);
+                ctx.Shelters.Remove(entity);
+                return ctx.SaveChanges() == 1;
+            }
+        }
 
 
     }

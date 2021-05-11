@@ -81,7 +81,23 @@ namespace PetPickr.Controllers
             ModelState.AddModelError("", "Your shelter could not be updated.");
             return View(model);
         }
+        [ActionName("Delete")]
+        public ActionResult Delete(int id)
+        {
+            var svc = new ShelterService();
+            var model = svc.GetShelterById(id);
+            return View(model);
+        }
+        [HttpPost]
+        [ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeletePost(int id)
+        {
+            var service = new ShelterService();
+            service.DeleteShelter(id);
+            TempData["SaveResult"] = "Shelter deleted.";
 
-
+            return RedirectToAction("Index");
+        }
     }
 }
