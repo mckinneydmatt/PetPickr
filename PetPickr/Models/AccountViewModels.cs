@@ -48,6 +48,7 @@ namespace PetPickr.Models
 
     public class LoginViewModel
     {
+       
         [Required]
         [Display(Name = "Email")]
         [EmailAddress]
@@ -64,6 +65,18 @@ namespace PetPickr.Models
 
     public class RegisterViewModel
     {
+        [Required(ErrorMessage = "First Name is required.")]
+        [Display(Name = "First Name")]
+        public string FirstName { get; set; }
+        [Required(ErrorMessage = "Last Name is required.")]
+        [Display(Name = "Last Name")]
+        public string LastName { get; set; }
+        [Required(ErrorMessage = "Phone number is required.")]
+        [Display(Name = "Phone Number")]
+        public string PhoneNumber { get; set; }
+        [Required(ErrorMessage = "Address is required.")]
+        [Display(Name = "Address")]
+        public string Address { get; set; }
         [Required]
         [EmailAddress]
         [Display(Name = "Email")]
