@@ -55,10 +55,21 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ShelterService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PetPickr.Data\PetPickr.Data.csproj">
+      <Project>{545841ed-2fcc-477e-aff9-9546e050628a}</Project>
+      <Name>PetPickr.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PetPickr.Models\PetPickr.Models.csproj">
+      <Project>{192eae18-8a5b-469e-9dec-25243c8cfa3b}</Project>
+      <Name>PetPickr.Models</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace PetPickr.Models
 {
-    public class ShelterListItem
+    public class ShelterEdit
     {
         [Display(Name = "Shelter ID")]
         public int ShelterId { get; set; }

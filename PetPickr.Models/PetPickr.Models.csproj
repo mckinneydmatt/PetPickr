@@ -56,6 +56,8 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ShelterCreate.cs" />
+    <Compile Include="ShelterDetail.cs" />
+    <Compile Include="ShelterEdit.cs" />
     <Compile Include="ShelterListItem.cs" />
   </ItemGroup>
   <ItemGroup>
