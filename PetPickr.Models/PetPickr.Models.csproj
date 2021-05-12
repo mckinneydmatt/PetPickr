@@ -54,6 +54,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CatCreate.cs" />
+    <Compile Include="CatDetail.cs" />
+    <Compile Include="CatEdit.cs" />
+    <Compile Include="CatListItem.cs" />
+    <Compile Include="DogCreate.cs" />
+    <Compile Include="DogDetail.cs" />
+    <Compile Include="DogEdit.cs" />
+    <Compile Include="DogListItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ShelterCreate.cs" />
     <Compile Include="ShelterDetail.cs" />
@@ -63,6 +71,12 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PetPickr.Data\PetPickr.Data.csproj">
+      <Project>{545841ED-2FCC-477E-AFF9-9546E050628A}</Project>
+      <Name>PetPickr.Data</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

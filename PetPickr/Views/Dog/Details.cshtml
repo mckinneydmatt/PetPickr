@@ -1,0 +1,74 @@
+﻿@model PetPickr.Models.DogDetail
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>DogDetail</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.DogId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DogId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DogName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DogName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DogBreed)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DogBreed)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DogWeight)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DogWeight)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DogAge)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DogAge)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DogPrice)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DogPrice)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ShelterName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ShelterName)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new {  id = Model.DogId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

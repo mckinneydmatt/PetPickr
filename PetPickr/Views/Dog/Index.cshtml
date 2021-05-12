@@ -1,0 +1,69 @@
+﻿@model IEnumerable<PetPickr.Models.DogListItem>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.DogId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DogName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DogBreed)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DogWeight)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DogAge)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DogPrice)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ShelterName)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.DogId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DogName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DogBreed)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DogWeight)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DogAge)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DogPrice)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ShelterName)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.DogId }) |
+            @Html.ActionLink("Details", "Details", new { id = item.DogId }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.DogId })
+        </td>
+    </tr>
+}
+
+</table>

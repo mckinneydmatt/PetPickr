@@ -54,6 +54,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Cat.cs" />
+    <Compile Include="Dog.cs" />
     <Compile Include="IdentityModels.cs" />
     <Compile Include="Migrations\202105111530437_InitialCreate.cs" />
     <Compile Include="Migrations\202105111530437_InitialCreate.Designer.cs">
@@ -66,6 +68,18 @@
     <Compile Include="Migrations\202105111824293_second migration.cs" />
     <Compile Include="Migrations\202105111824293_second migration.Designer.cs">
       <DependentUpon>202105111824293_second migration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202105112131287_third migration.cs" />
+    <Compile Include="Migrations\202105112131287_third migration.Designer.cs">
+      <DependentUpon>202105112131287_third migration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202105112249544_fourth migration.cs" />
+    <Compile Include="Migrations\202105112249544_fourth migration.Designer.cs">
+      <DependentUpon>202105112249544_fourth migration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202105121652145_512first Migration.cs" />
+    <Compile Include="Migrations\202105121652145_512first Migration.Designer.cs">
+      <DependentUpon>202105121652145_512first Migration.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -84,6 +98,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202105111824293_second migration.resx">
       <DependentUpon>202105111824293_second migration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202105112131287_third migration.resx">
+      <DependentUpon>202105112131287_third migration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202105112249544_fourth migration.resx">
+      <DependentUpon>202105112249544_fourth migration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202105121652145_512first Migration.resx">
+      <DependentUpon>202105121652145_512first Migration.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

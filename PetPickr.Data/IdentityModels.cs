@@ -36,6 +36,8 @@ namespace PetPickr.Data
             return new ApplicationDbContext();
         }
         public DbSet<Shelter> Shelters { get; set; }
+        public DbSet<Dog> Dogs { get; set; }
+        public DbSet<Cat> Cats { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

@@ -168,6 +168,8 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\CatController.cs" />
+    <Compile Include="Controllers\DogController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\ShelterController.cs" />
@@ -240,6 +242,16 @@
     <Content Include="Views\Shelter\Details.cshtml" />
     <Content Include="Views\Shelter\Edit.cshtml" />
     <Content Include="Views\Shelter\Delete.cshtml" />
+    <Content Include="Views\Dog\Index.cshtml" />
+    <Content Include="Views\Dog\Create.cshtml" />
+    <Content Include="Views\Dog\Edit.cshtml" />
+    <Content Include="Views\Dog\Details.cshtml" />
+    <Content Include="Views\Dog\Delete.cshtml" />
+    <Content Include="Views\Cat\Index.cshtml" />
+    <Content Include="Views\Cat\Create.cshtml" />
+    <Content Include="Views\Cat\Details.cshtml" />
+    <Content Include="Views\Cat\Edit.cshtml" />
+    <Content Include="Views\Cat\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
