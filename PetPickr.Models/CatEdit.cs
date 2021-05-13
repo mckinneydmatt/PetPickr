@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PetPickr.Data;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -21,6 +22,8 @@ namespace PetPickr.Models
         [Display(Name = "Price")]
         public double CatPrice { get; set; }
         public int ShelterId { get; set; }
+        public virtual Shelter Shelter { get; set; }
+
     }
 
 }

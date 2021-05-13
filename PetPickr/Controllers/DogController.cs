@@ -1,4 +1,5 @@
-﻿using PetPickr.Models;
+﻿using PetPickr.Data;
+using PetPickr.Models;
 using PetPickr.Services;
 using System;
 using System.Collections.Generic;
@@ -21,8 +22,19 @@ namespace PetPickr.Controllers
         //GET
         public ActionResult Create()
         {
+            using (var ctx = new ApplicationDbContext())
+            {
+                    ViewBag.ShelterList = ctx.Shelters.Select
+                    (s => new SelectListItem()
+                    {
+                        Text = s.ShelterName,
+                        Value = s.ShelterId.ToString()
+                    }
+                    ).ToList();
+            }
             return View();
         }
+    
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create(DogCreate model)
@@ -45,6 +57,16 @@ namespace PetPickr.Controllers
         }
         public ActionResult Edit(int id)
         {
+            using (var ctx = new ApplicationDbContext())
+            {
+                ViewBag.ShelterList = ctx.Shelters.Select
+                (s => new SelectListItem()
+                {
+                    Text = s.ShelterName,
+                    Value = s.ShelterId.ToString()
+                }
+                ).ToList();
+            }
             var service = new DogService();
             var detail = service.GetDogById(id);
             var model =

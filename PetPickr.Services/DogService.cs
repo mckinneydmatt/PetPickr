@@ -86,6 +86,7 @@ namespace PetPickr.Services
                 entity.DogWeight = model.DogWeight;
                 entity.DogAge = model.DogAge;
                 entity.DogPrice = model.DogPrice;
+                entity.ShelterId = model.ShelterId;
 
                 return ctx.SaveChanges() == 1;
             }

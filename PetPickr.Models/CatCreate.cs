@@ -28,5 +28,6 @@ namespace PetPickr.Models
         [Required]
         public int ShelterId { get; set; }
         public virtual Shelter Shelter { get; set; }
+
     }
 }

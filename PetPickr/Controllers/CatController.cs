@@ -1,15 +1,20 @@
-﻿using PetPickr.Models;
+﻿using PetPickr.Data;
+using PetPickr.Models;
 using PetPickr.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.UI.WebControls;
 
 namespace PetPickr.Controllers
 {
+
     public class CatController : Controller
     {
+
+
         // GET: Cat
         public ActionResult Index()
         {
@@ -21,12 +26,54 @@ namespace PetPickr.Controllers
         //GET
         public ActionResult Create()
         {
+            using (var ctx = new ApplicationDbContext())
+            {
+
+                //List<SelectListItem> listOfShelters = new List<SelectListItem>();
+                //foreach (var c in ctx.Shelters)
+                //{
+                //    listOfShelters.Add(new SelectListItem
+                //    {
+                //        Text = c.ShelterName,
+                //        Value = c.ShelterId.ToString()
+                //    });
+                //}
+                ////ctx.Shelters.Select(s => new SelectListItem() { Text = s.ShelterName, Value = s.ShelterId.ToString() });
+                //var shelters = ctx.Shelters.Select(s => new SelectListItem() { Text = s.ShelterName, Value = s.ShelterId.ToString() }).ToList(); // listOfShelters;
+
+                ViewBag.ShelterList = ctx.Shelters.Select
+                    (s => new SelectListItem()
+                    {
+                        Text = s.ShelterName,
+                        Value = s.ShelterId.ToString()
+                    }
+                    ).ToList();
+            }
             return View();
         }
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create(CatCreate model)
         {
+            //using (var ctx = new ApplicationDbContext())
+            //{
+
+            //    ViewBag.ShelterList = new SelectList(ctx.Shelters, "ID", "Name");
+            //}
+
+            //using (var ctx = new ApplicationDbContext())
+            //{
+            //    var shelterList = new List<Shelter>();
+
+            //    foreach (var shelter in ctx.Shelters)
+            //    {
+            //        shelterList.Add(shelter);
+            //    }
+            //    ViewBag.ShelterList = shelterList;
+            //}
+
+
             if (!ModelState.IsValid) return View(model);
             var service = new CatService();
             if (service.CreateCat(model))
@@ -45,6 +92,16 @@ namespace PetPickr.Controllers
         }
         public ActionResult Edit(int id)
         {
+            using (var ctx = new ApplicationDbContext())
+            {
+                ViewBag.ShelterList = ctx.Shelters.Select
+                    (s => new SelectListItem()
+                    {
+                        Text = s.ShelterName,
+                        Value = s.ShelterId.ToString()
+                    }
+                    ).ToList();
+            }
             var service = new CatService();
             var detail = service.GetCatById(id);
             var model =

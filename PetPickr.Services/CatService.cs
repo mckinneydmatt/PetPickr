@@ -10,6 +10,7 @@ namespace PetPickr.Services
 {
     public class CatService
     {
+        
         public bool CreateCat(CatCreate model)
         {
             var entity =
@@ -31,6 +32,8 @@ namespace PetPickr.Services
 
         public IEnumerable<CatListItem> GetCats()
         {
+            
+        
             using (var ctx = new ApplicationDbContext())
             {
                 var query =
@@ -56,7 +59,7 @@ namespace PetPickr.Services
         {
             using (var ctx = new ApplicationDbContext())
             {
-                // get dog from ID
+                // get cat from ID
                 var cat = ctx.Cats.Single(e => e.CatId == id);
 
                 return new CatDetail
@@ -82,6 +85,7 @@ namespace PetPickr.Services
                 entity.CatWeight = model.CatWeight;
                 entity.CatAge = model.CatAge;
                 entity.CatPrice = model.CatPrice;
+                entity.ShelterId = model.ShelterId;
 
                 return ctx.SaveChanges() == 1;
             }
