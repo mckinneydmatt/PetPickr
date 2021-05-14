@@ -12,52 +12,55 @@ namespace PetPickr
         public void Configuration(IAppBuilder app)
         {
             ConfigureAuth(app);
-            //createRolesandUsers();
+            CreateRolesandUsers();
         }
-        //// In this method we will create default User roles and Admin user for login    
-        //private void createRolesandUsers()
-        //{
-        //    ApplicationDbContext context = new ApplicationDbContext();
+        // In this method we will create default User roles and Admin user for login    
+        private void CreateRolesandUsers()
+        {
+            ApplicationDbContext context = new ApplicationDbContext();
 
-        //    var roleManager = new RoleManager<IdentityRole>(new RoleStore<IdentityRole>(context));
-        //    var UserManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(context));
+            var roleManager = new RoleManager<IdentityRole>(new RoleStore<IdentityRole>(context));
+            //var UserManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(context));
+
+            //Here we create a Admin super user who will maintain the website                   
+
+            //var user = new ApplicationUser();
+            //user.UserName = "admin";
+            //user.Email = "admin@admin.com";
+
+            //string userPWD = "ADMIN123";
+
+            //var chkUser = UserManager.Create(user, userPWD);
+
+            ////Add default User to Role Admin    
+            //if (chkUser.Succeeded)
+            //{
+            //    var result1 = UserManager.AddToRole(user.Id, "Admin");
+
+            //}
 
 
-        //    // In Startup iam creating first Admin Role and creating a default Admin User     
-        //    if (!roleManager.RoleExists("Admin"))
-        //    {
-
-        //        // first we create Admin role    
-        //        var role = new Microsoft.AspNet.Identity.EntityFramework.IdentityRole();
-        //        role.Name = "Admin";
-        //        roleManager.Create(role);
-
-        //        //Here we create a Admin super user who will maintain the website                   
-
-        //        var user = new ApplicationUser();
-        //        user.UserName = "admin";
-        //        user.Email = "mckinneydmatt@gmail.com";
-
-        //        string userPWD = "admin";
-
-        //        var chkUser = UserManager.Create(user, userPWD);
-
-        //        //Add default User to Role Admin    
-        //        if (chkUser.Succeeded)
-        //        {
-        //            var result1 = UserManager.AddToRole(user.Id, "Admin");
-
-        //        }
-        //    }
-
-        //    // creating Creating Employee role     
-        //    if (!roleManager.RoleExists("Customer"))
-        //    {
-        //        var role = new Microsoft.AspNet.Identity.EntityFramework.IdentityRole();
-        //        role.Name = "Customer";
-        //        roleManager.Create(role);
-
-        //    }
-        //}
+                // Creating Admin role     
+            if (!roleManager.RoleExists("Admin"))
+            {
+                var role = new IdentityRole();
+                role.Name = "Admin";
+                roleManager.Create(role);
+            }
+            // Creating Customer role     
+            if (!roleManager.RoleExists("Customer"))
+            {
+                var role = new IdentityRole();
+                role.Name = "Customer";
+                roleManager.Create(role);
+            }
+            // Creating Shelter admin role     
+            if (!roleManager.RoleExists("Shelter"))
+            {
+                var role = new IdentityRole();
+                role.Name = "Shelter";
+                roleManager.Create(role);
+            }
+        }
     }
 }
