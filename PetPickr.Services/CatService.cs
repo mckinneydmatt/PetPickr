@@ -13,10 +13,14 @@ namespace PetPickr.Services
         
         public bool CreateCat(CatCreate model)
         {
+
+            
+
             var entity =
                 new Cat()
                 {
                     CatName = model.CatName,
+                    CatSex = model.CatSex,
                     CatWeight = model.CatWeight,
                     CatAge = model.CatAge,
                     CatPrice = model.CatPrice,
@@ -66,6 +70,7 @@ namespace PetPickr.Services
                 {
                     CatId = cat.CatId,
                     CatName = cat.CatName,
+                    CatSex = cat.CatSex,
                     CatWeight = cat.CatWeight,
                     CatAge = cat.CatAge,
                     CatPrice = cat.CatPrice,
@@ -82,6 +87,7 @@ namespace PetPickr.Services
                     .Cats
                     .Single(e => e.CatId == model.CatId);
                 entity.CatName = model.CatName;
+                entity.CatSex = model.CatSex;
                 entity.CatWeight = model.CatWeight;
                 entity.CatAge = model.CatAge;
                 entity.CatPrice = model.CatPrice;

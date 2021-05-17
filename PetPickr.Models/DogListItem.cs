@@ -16,10 +16,8 @@ namespace PetPickr.Models
         public string DogName { get; set; }
         [Display(Name = "Breed")]
         public string DogBreed { get; set; }
-        [Display(Name = "Weight")]
-        public int DogWeight { get; set; }
-        [Display(Name = "Age")]
-        public int DogAge { get; set; }
+        
+   
         [Display(Name = "Price")]
         public double DogPrice { get; set; }
         [Display(Name = "Shelter Name")]

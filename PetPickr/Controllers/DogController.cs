@@ -20,6 +20,8 @@ namespace PetPickr.Controllers
         }
 
         //GET
+        [Authorize(Roles = "Admin,Shelter")]
+        
         public ActionResult Create()
         {
             using (var ctx = new ApplicationDbContext())
@@ -37,6 +39,8 @@ namespace PetPickr.Controllers
     
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin,Shelter")]
+
         public ActionResult Create(DogCreate model)
         {
             if (!ModelState.IsValid) return View(model);
@@ -55,6 +59,8 @@ namespace PetPickr.Controllers
             var model = svc.GetDogById(id);
             return View(model);
         }
+        [Authorize(Roles = "Admin")]
+
         public ActionResult Edit(int id)
         {
             using (var ctx = new ApplicationDbContext())
@@ -84,6 +90,8 @@ namespace PetPickr.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin")]
+
         public ActionResult Edit(int id, DogEdit model)
         {
             if (!ModelState.IsValid) return View(model);
@@ -106,6 +114,8 @@ namespace PetPickr.Controllers
             return View(model);
         }
         [ActionName("Delete")]
+        [Authorize(Roles = "Admin")]
+
         public ActionResult Delete(int id)
         {
             var svc = new DogService();
@@ -115,6 +125,8 @@ namespace PetPickr.Controllers
         [HttpPost]
         [ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin")]
+
         public ActionResult DeletePost(int id)
         {
             var service = new DogService();

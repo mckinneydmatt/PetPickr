@@ -8,6 +8,11 @@ using System.Threading.Tasks;
 
 namespace PetPickr.Data
 {
+    public enum DogSex
+    {
+        male,
+        female
+    }
     public class Dog
     {
         [Key]
@@ -17,6 +22,7 @@ namespace PetPickr.Data
         public string DogName { get; set; }
         [Required]
         public string DogBreed { get; set; }
+        public DogSex DogSex { get; set; }
         [Required]
         public int DogWeight { get; set; }
         [Required]

@@ -8,9 +8,13 @@ using System.Web.Mvc;
 
 namespace PetPickr.Controllers
 {
-    [Authorize]
+    [Authorize(Roles = "Admin")]
+
     public class ShelterController : Controller
     {
+
+   
+
         // GET: Shelter
         public ActionResult Index()
         {

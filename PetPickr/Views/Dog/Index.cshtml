@@ -20,12 +20,8 @@
         <th>
             @Html.DisplayNameFor(model => model.DogBreed)
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.DogWeight)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.DogAge)
-        </th>
+       
+       
         <th>
             @Html.DisplayNameFor(model => model.DogPrice)
         </th>
@@ -35,35 +31,39 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.DogId)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.DogName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.DogBreed)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.DogWeight)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.DogAge)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.DogPrice)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ShelterName)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.DogId }) |
-            @Html.ActionLink("Details", "Details", new { id = item.DogId }) |
-            @Html.ActionLink("Delete", "Delete", new { id = item.DogId })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.DogId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DogName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DogBreed)
+            </td>
+          
+            
+            <td>
+                @Html.DisplayFor(modelItem => item.DogPrice)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ShelterName)
+            </td>
+            <td>
+
+                @if (User.Identity.IsAuthenticated && User.IsInRole("Admin"))
+                {
+                    @Html.ActionLink("Edit |", "Edit", new { id = item.DogId });
+                }
+                @Html.ActionLink("Details", "Details", new { id = item.DogId })
+                @if (User.Identity.IsAuthenticated && User.IsInRole("Admin"))
+                {
+                    @Html.ActionLink("| Delete", "Delete", new { id = item.DogId })
+                }
+            </td>
+        </tr>
+    }
 
 </table>

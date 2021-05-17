@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PetPickr.Data;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -13,6 +14,8 @@ namespace PetPickr.Models
         public int CatId { get; set; }
         [Display(Name = "Name")]
         public string CatName { get; set; }
+        [Display(Name = "Sex")]
+        public CatSex? CatSex { get; set; }
 
         [Display(Name = "Weight")]
         public int CatWeight { get; set; }

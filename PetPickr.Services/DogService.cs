@@ -44,8 +44,7 @@ namespace PetPickr.Services
                                     DogId = e.DogId,
                                     DogName = e.DogName,
                                     DogBreed = e.DogBreed,
-                                    DogWeight = e.DogWeight,
-                                    DogAge = e.DogAge,
+                                 
                                     DogPrice = e.DogPrice,
                                     ShelterName = e.Shelter.ShelterName
                                 }

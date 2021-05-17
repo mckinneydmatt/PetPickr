@@ -56,24 +56,6 @@ namespace PetPickr.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(CatCreate model)
         {
-            //using (var ctx = new ApplicationDbContext())
-            //{
-
-            //    ViewBag.ShelterList = new SelectList(ctx.Shelters, "ID", "Name");
-            //}
-
-            //using (var ctx = new ApplicationDbContext())
-            //{
-            //    var shelterList = new List<Shelter>();
-
-            //    foreach (var shelter in ctx.Shelters)
-            //    {
-            //        shelterList.Add(shelter);
-            //    }
-            //    ViewBag.ShelterList = shelterList;
-            //}
-
-
             if (!ModelState.IsValid) return View(model);
             var service = new CatService();
             if (service.CreateCat(model))
@@ -109,6 +91,7 @@ namespace PetPickr.Controllers
                     {
                         CatId = detail.CatId,
                         CatName = detail.CatName,
+                        CatSex = detail.CatSex,
                         CatWeight = detail.CatWeight,
                         CatAge = detail.CatAge,
                         CatPrice = detail.CatPrice
