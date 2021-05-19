@@ -15,5 +15,7 @@ namespace PetPickr.Models
         public string ShelterName { get; set; }
         [Display(Name = "Shelter Address")]
         public string ShelterAddress { get; set; }
+        [Display(Name = "Shelter Phone Number")]
+        public string ShelterPhoneNumber { get; set; }
     }
 }

@@ -16,6 +16,9 @@ namespace PetPickr.Models
         public string DogName { get; set; }
         [Display(Name = "Breed")]
         public string DogBreed { get; set; }
+        [Display(Name = "Sex")]
+        [Required]
+        public DogSex? DogSex { get; set; }
         [Display(Name = "Weight")]
         public int DogWeight { get; set; }
         [Display(Name = "Age")]

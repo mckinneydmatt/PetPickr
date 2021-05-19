@@ -17,6 +17,7 @@ namespace PetPickr.Services
                 {
                     ShelterName = model.ShelterName,
                     ShelterAddress = model.ShelterAddress,
+                    ShelterPhoneNumber = model.ShelterPhoneNumber,
                 };
 
             using (var ctx = new ApplicationDbContext())
@@ -39,7 +40,8 @@ namespace PetPickr.Services
                                 {
                                     ShelterId = e.ShelterId,
                                     ShelterName = e.ShelterName,
-                                    ShelterAddress = e.ShelterAddress
+                                    ShelterAddress = e.ShelterAddress,
+                                    ShelterPhoneNumber = e.ShelterPhoneNumber
                                 }
                         );
 
@@ -60,7 +62,9 @@ namespace PetPickr.Services
                     {
                         ShelterId = entity.ShelterId,
                         ShelterName = entity.ShelterName,
-                        ShelterAddress = entity.ShelterAddress
+                        ShelterAddress = entity.ShelterAddress,
+                        ShelterPhoneNumber = entity.ShelterPhoneNumber
+
                     };
             }
         }
@@ -74,6 +78,7 @@ namespace PetPickr.Services
                     .Single(e => e.ShelterId == model.ShelterId);
                 entity.ShelterName = model.ShelterName;
                 entity.ShelterAddress = model.ShelterAddress;
+                entity.ShelterPhoneNumber = model.ShelterPhoneNumber;
 
                 return ctx.SaveChanges() == 1;
             }

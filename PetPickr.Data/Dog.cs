@@ -10,8 +10,8 @@ namespace PetPickr.Data
 {
     public enum DogSex
     {
-        male,
-        female
+        Male=1,
+        Female=2
     }
     public class Dog
     {
@@ -22,7 +22,8 @@ namespace PetPickr.Data
         public string DogName { get; set; }
         [Required]
         public string DogBreed { get; set; }
-        public DogSex DogSex { get; set; }
+        [Range(1, 2, ErrorMessage = "Please select male or female.")]
+        public DogSex? DogSex { get; set; }
         [Required]
         public int DogWeight { get; set; }
         [Required]
@@ -32,7 +33,6 @@ namespace PetPickr.Data
         [ForeignKey(nameof(Shelter))]
         [Required]
         public int ShelterId { get; set; }
-
         public virtual Shelter Shelter { get; set; }
     }
 }

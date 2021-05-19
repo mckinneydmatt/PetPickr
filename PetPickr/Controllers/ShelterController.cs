@@ -8,7 +8,6 @@ using System.Web.Mvc;
 
 namespace PetPickr.Controllers
 {
-    [Authorize(Roles = "Admin")]
 
     public class ShelterController : Controller
     {
@@ -30,6 +29,8 @@ namespace PetPickr.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin")]
+
         public ActionResult Create(ShelterCreate model)
         {
             if (!ModelState.IsValid) return View(model);
@@ -59,11 +60,14 @@ namespace PetPickr.Controllers
                         ShelterId = detail.ShelterId,
                         ShelterName = detail.ShelterName,
                         ShelterAddress = detail.ShelterAddress,
+                        ShelterPhoneNumber = detail.ShelterPhoneNumber,
                     };
             return View(model);
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin")]
+
         public ActionResult Edit(int id, ShelterEdit model)
         {
             if (!ModelState.IsValid) return View(model);
@@ -95,6 +99,8 @@ namespace PetPickr.Controllers
         [HttpPost]
         [ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin")]
+
         public ActionResult DeletePost(int id)
         {
             var service = new ShelterService();

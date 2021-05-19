@@ -18,12 +18,17 @@ namespace PetPickr.Models
         [Display(Name = "Sex")]
         public CatSex? CatSex { get; set; }
         [Required]
+        [Range(1, 100, ErrorMessage = "Please enter a valid weight.")]
+
         [Display(Name = "Weight")]
         public int CatWeight { get; set; }
         [Required]
+        [Range(1, 100, ErrorMessage = "Please enter a valid age.")]
         [Display(Name = "Age")]
+
         public int CatAge { get; set; }
         [Required]
+        [Range(1, 500, ErrorMessage = "Please enter a valid price.")]
         [Display(Name = "Price")]
         public double CatPrice { get; set; }
         [ForeignKey(nameof(Shelter))]

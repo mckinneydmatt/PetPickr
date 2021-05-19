@@ -11,13 +11,33 @@ namespace PetPickr.Controllers
 {
     public class DogController : Controller
     {
-        // GET: Dog
-        public ActionResult Index()
+
+        private ApplicationDbContext ctx = new ApplicationDbContext();
+        public ActionResult Index(string sortOrder)
         {
+            ViewBag.NameSortParm = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
+            ViewBag.PriceSortParm = sortOrder == "Price" ? "Price_desc" : "Price";
             var service = new DogService();
-            var model = service.GetDogs();
-            return View(model);
+            var dogs = service.GetDogs();
+
+            switch (sortOrder)
+            {
+                case "name_desc":
+                    dogs = dogs.OrderByDescending(s => s.DogName);
+                    break;
+                case "Price":
+                    dogs = dogs.OrderBy(s => s.DogPrice);
+                    break;
+                case "Price_desc":
+                    dogs = dogs.OrderByDescending(s => s.DogPrice);
+                    break;
+                default:
+                    dogs = dogs.OrderBy(s => s.DogName);
+                    break;
+            }
+            return View(dogs.ToList());
         }
+
 
         //GET
         [Authorize(Roles = "Admin,Shelter")]
@@ -81,9 +101,11 @@ namespace PetPickr.Controllers
                         DogId= detail.DogId,
                         DogName = detail.DogName,
                         DogBreed = detail.DogBreed,
+                        DogSex = detail.DogSex,
                         DogWeight = detail.DogWeight,
                         DogAge = detail.DogAge,
                         DogPrice = detail.DogPrice,
+                        ShelterId = detail.ShelterId
 
                     };
             return View(model);

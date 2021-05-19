@@ -67,6 +67,7 @@
     <Compile Include="ShelterDetail.cs" />
     <Compile Include="ShelterEdit.cs" />
     <Compile Include="ShelterListItem.cs" />
+    <Compile Include="Utilities.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

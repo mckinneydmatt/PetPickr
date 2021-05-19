@@ -25,7 +25,13 @@
             @Html.ValidationMessageFor(model => model.CatName, "", new { @class = "text-danger" })
         </div>
     </div>
-
+    <div class="form-group">
+        @Html.LabelFor(model => model.CatSex, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EnumDropDownListFor(model => model.CatSex, "Sex", new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.CatSex, "", new { @class = "text-danger" })
+        </div>
+    </div>
     <div class="form-group">
         @Html.LabelFor(model => model.CatWeight, htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">

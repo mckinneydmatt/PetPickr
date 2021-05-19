@@ -10,7 +10,6 @@ namespace PetPickr.Data.Migrations
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
-            ContextKey = "PetPickr.Data.ApplicationDbContext";
         }
 
         protected override void Seed(PetPickr.Data.ApplicationDbContext context)

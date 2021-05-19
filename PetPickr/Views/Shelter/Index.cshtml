@@ -20,26 +20,32 @@
         <th>
             @Html.DisplayNameFor(model => model.ShelterAddress)
         </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ShelterPhoneNumber)
+        </th>
         <th></th>
     </tr>
 
 @foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.ShelterId)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ShelterName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ShelterAddress)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new {  id=item.ShelterId }) |
-            @Html.ActionLink("Details", "Details", new { id = item.ShelterId }) |
-            @Html.ActionLink("Delete", "Delete", new { id = item.ShelterId })
-        </td>
-    </tr>
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.ShelterId)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.ShelterName)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.ShelterAddress)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.ShelterPhoneNumber)
+    </td>
+    <td>
+        @Html.ActionLink("Edit", "Edit", new { id = item.ShelterId }) |
+        @Html.ActionLink("Details", "Details", new { id = item.ShelterId }) |
+        @Html.ActionLink("Delete", "Delete", new { id = item.ShelterId })
+    </td>
+</tr>
 }
 
 </table>

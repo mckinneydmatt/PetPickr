@@ -15,6 +15,8 @@ namespace PetPickr.Data
         public string ShelterName { get; set; }
         [Required]
         public string ShelterAddress { get; set; }
+        [Required]
+        public string ShelterPhoneNumber { get; set; }
         public ICollection<Dog> Dogs { get; set; }
     }
 }

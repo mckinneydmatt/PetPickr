@@ -7,13 +7,13 @@ namespace PetPickr.Data.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.0-30225")]
-    public sealed partial class secondmigration : IMigrationMetadata
+    public sealed partial class Tuesdaylastmigration : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(secondmigration));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(Tuesdaylastmigration));
         
         string IMigrationMetadata.Id
         {
-            get { return "202105111824293_second migration"; }
+            get { return "202105190117280_Tuesday last migration"; }
         }
         
         string IMigrationMetadata.Source

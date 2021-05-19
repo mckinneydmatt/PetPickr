@@ -33,7 +33,13 @@
             @Html.ValidationMessageFor(model => model.DogBreed, "", new { @class = "text-danger" })
         </div>
     </div>
-
+    <div class="form-group">
+        @Html.LabelFor(model => model.DogSex, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EnumDropDownListFor(model => model.DogSex, "Sex", new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.DogSex, "", new { @class = "text-danger" })
+        </div>
+    </div>
     <div class="form-group">
         @Html.LabelFor(model => model.DogWeight, htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">

@@ -17,6 +17,7 @@ namespace PetPickr.Services
                 {
                     DogName = model.DogName,
                     DogBreed = model.DogBreed,
+                    DogSex = model.DogSex,
                     DogWeight = model.DogWeight,
                     DogAge = model.DogAge,
                     DogPrice = model.DogPrice,
@@ -65,9 +66,11 @@ namespace PetPickr.Services
                     DogId = dog.DogId,
                     DogName = dog.DogName,
                     DogBreed = dog.DogBreed,
+                    DogSex = dog.DogSex,
                     DogWeight = dog.DogWeight,
                     DogAge = dog.DogAge,
                     DogPrice = dog.DogPrice,
+                    ShelterId = dog.ShelterId,
                     ShelterName = dog.Shelter.ShelterName
                  };
             }
@@ -82,6 +85,7 @@ namespace PetPickr.Services
                     .Single(e => e.DogId == model.DogId);
                 entity.DogName = model.DogName;
                 entity.DogBreed = model.DogBreed;
+                entity.DogSex = model.DogSex;
                 entity.DogWeight = model.DogWeight;
                 entity.DogAge = model.DogAge;
                 entity.DogPrice = model.DogPrice;

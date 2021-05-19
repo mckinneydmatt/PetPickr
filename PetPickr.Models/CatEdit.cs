@@ -14,7 +14,6 @@ namespace PetPickr.Models
         public int CatId { get; set; }
         [Display(Name = "Name")]
         public string CatName { get; set; }
-        [Required]
         [Display(Name = "Sex")]
 
         public CatSex? CatSex { get; set; }

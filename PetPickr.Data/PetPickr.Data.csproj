@@ -57,41 +57,13 @@
     <Compile Include="Cat.cs" />
     <Compile Include="Dog.cs" />
     <Compile Include="IdentityModels.cs" />
-    <Compile Include="Migrations\202105111530437_InitialCreate.cs" />
-    <Compile Include="Migrations\202105111530437_InitialCreate.Designer.cs">
-      <DependentUpon>202105111530437_InitialCreate.cs</DependentUpon>
+    <Compile Include="Migrations\202105181705581_Tuesday fourth migration.cs" />
+    <Compile Include="Migrations\202105181705581_Tuesday fourth migration.Designer.cs">
+      <DependentUpon>202105181705581_Tuesday fourth migration.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202105111606414_first migration.cs" />
-    <Compile Include="Migrations\202105111606414_first migration.Designer.cs">
-      <DependentUpon>202105111606414_first migration.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202105111824293_second migration.cs" />
-    <Compile Include="Migrations\202105111824293_second migration.Designer.cs">
-      <DependentUpon>202105111824293_second migration.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202105112131287_third migration.cs" />
-    <Compile Include="Migrations\202105112131287_third migration.Designer.cs">
-      <DependentUpon>202105112131287_third migration.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202105112249544_fourth migration.cs" />
-    <Compile Include="Migrations\202105112249544_fourth migration.Designer.cs">
-      <DependentUpon>202105112249544_fourth migration.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202105121652145_512first Migration.cs" />
-    <Compile Include="Migrations\202105121652145_512first Migration.Designer.cs">
-      <DependentUpon>202105121652145_512first Migration.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202105131557546_May13 first migration.cs" />
-    <Compile Include="Migrations\202105131557546_May13 first migration.Designer.cs">
-      <DependentUpon>202105131557546_May13 first migration.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202105141547019_new514 first migration.cs" />
-    <Compile Include="Migrations\202105141547019_new514 first migration.Designer.cs">
-      <DependentUpon>202105141547019_new514 first migration.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202105171955597_Mig517 first.cs" />
-    <Compile Include="Migrations\202105171955597_Mig517 first.Designer.cs">
-      <DependentUpon>202105171955597_Mig517 first.cs</DependentUpon>
+    <Compile Include="Migrations\202105190117280_Tuesday last migration.cs" />
+    <Compile Include="Migrations\202105190117280_Tuesday last migration.Designer.cs">
+      <DependentUpon>202105190117280_Tuesday last migration.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -102,32 +74,11 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202105111530437_InitialCreate.resx">
-      <DependentUpon>202105111530437_InitialCreate.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202105181705581_Tuesday fourth migration.resx">
+      <DependentUpon>202105181705581_Tuesday fourth migration.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202105111606414_first migration.resx">
-      <DependentUpon>202105111606414_first migration.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202105111824293_second migration.resx">
-      <DependentUpon>202105111824293_second migration.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202105112131287_third migration.resx">
-      <DependentUpon>202105112131287_third migration.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202105112249544_fourth migration.resx">
-      <DependentUpon>202105112249544_fourth migration.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202105121652145_512first Migration.resx">
-      <DependentUpon>202105121652145_512first Migration.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202105131557546_May13 first migration.resx">
-      <DependentUpon>202105131557546_May13 first migration.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202105141547019_new514 first migration.resx">
-      <DependentUpon>202105141547019_new514 first migration.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202105171955597_Mig517 first.resx">
-      <DependentUpon>202105171955597_Mig517 first.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202105190117280_Tuesday last migration.resx">
+      <DependentUpon>202105190117280_Tuesday last migration.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

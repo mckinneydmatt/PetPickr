@@ -74,7 +74,8 @@ namespace PetPickr.Services
                     CatWeight = cat.CatWeight,
                     CatAge = cat.CatAge,
                     CatPrice = cat.CatPrice,
-                    ShelterName = cat.Shelter.ShelterName
+                    ShelterName = cat.Shelter.ShelterName,
+                    ShelterId = cat.ShelterId
                 };
             }
         }

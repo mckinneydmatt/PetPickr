@@ -14,14 +14,33 @@ namespace PetPickr.Controllers
     public class CatController : Controller
     {
 
-
-        // GET: Cat
-        public ActionResult Index()
+        private ApplicationDbContext ctx = new ApplicationDbContext();
+        public ActionResult Index(string sortOrder)
         {
+            ViewBag.NameSortParm = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
+            ViewBag.PriceSortParm = sortOrder == "Price" ? "Price_desc" : "Price";
             var service = new CatService();
-            var model = service.GetCats();
-            return View(model);
+            var cats = service.GetCats();
+
+            switch (sortOrder)
+            {
+                case "name_desc":
+                    cats = cats.OrderByDescending(s => s.CatName);
+                    break;
+                case "Price":
+                    cats = cats.OrderBy(s => s.CatPrice);
+                    break;
+                case "Price_desc":
+                    cats = cats.OrderByDescending(s => s.CatPrice);
+                    break;
+                default:
+                    cats = cats.OrderBy(s => s.CatName);
+                    break;
+            }
+            return View(cats.ToList());
         }
+     
+    
 
         //GET
         public ActionResult Create()
@@ -94,13 +113,15 @@ namespace PetPickr.Controllers
                         CatSex = detail.CatSex,
                         CatWeight = detail.CatWeight,
                         CatAge = detail.CatAge,
-                        CatPrice = detail.CatPrice
+                        CatPrice = detail.CatPrice,
+                        ShelterId = detail.ShelterId
 
                     };
             return View(model);
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles ="Admin")]
         public ActionResult Edit(int id, CatEdit model)
         {
             if (!ModelState.IsValid) return View(model);
