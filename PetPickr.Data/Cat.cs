@@ -32,6 +32,9 @@ namespace PetPickr.Data
         [ForeignKey(nameof(Shelter))]
         [Required]
         public int ShelterId { get; set; }
+        public string CatImage { get; set; }
         public virtual Shelter Shelter { get; set; }
     }
 }
+
+

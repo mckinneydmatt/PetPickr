@@ -4,46 +4,57 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
+<h2>Details about @Html.DisplayFor(model => model.ShelterName)</h2>
+@*<div id="googleMap" style="width:25%;height:200px;"></div>
 
-<div>
-    <h4>ShelterDetail</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.ShelterId)
-        </dt>
+    <script>
+        function myMap() {
+            var mapProp = {
+                center: new google.maps.LatLng(51.508742, -0.120850),
+                zoom: 5,
+            };
+            var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
+        }
+    </script>
 
-        <dd>
-            @Html.DisplayFor(model => model.ShelterId)
-        </dd>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDoWSGjLO5PZHw5uk9psxlBRlUzhbcJjyM&callback=myMap"></script>*@
 
-        <dt>
-            @Html.DisplayNameFor(model => model.ShelterName)
-        </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.ShelterName)
-        </dd>
+<hr />
+<dl class="dl-horizontal">
+    <dt>
+        @Html.DisplayNameFor(model => model.ShelterId)
+    </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.ShelterPhoneNumber)
-        </dt>
+    <dd>
+        @Html.DisplayFor(model => model.ShelterId)
+    </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.ShelterPhoneNumber)
-        </dd>
+    <dt>
+        @Html.DisplayNameFor(model => model.ShelterName)
+    </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.ShelterAddress)
-        </dt>
+    <dd>
+        @Html.DisplayFor(model => model.ShelterName)
+    </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.ShelterAddress)
-        </dd>
+    <dt>
+        @Html.DisplayNameFor(model => model.ShelterPhoneNumber)
+    </dt>
 
-    </dl>
-</div>
+    <dd>
+        @Html.DisplayFor(model => model.ShelterPhoneNumber)
+    </dd>
+
+    <dt>
+        @Html.DisplayNameFor(model => model.ShelterAddress)
+    </dt>
+
+    <dd>
+        @Html.DisplayFor(model => model.ShelterAddress)
+    </dd>
+
+</dl>
 <p>
     @if (User.Identity.IsAuthenticated && User.IsInRole("Admin"))
     {

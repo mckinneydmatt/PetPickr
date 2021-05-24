@@ -11,6 +11,8 @@ namespace PetPickr.Data
     {
         [Required]
         public int ShelterId { get; set; }
+        //[Required]
+        //public Guid OwnerId { get; set; }
         [Required]
         public string ShelterName { get; set; }
         [Required]

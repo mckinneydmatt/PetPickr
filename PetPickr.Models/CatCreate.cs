@@ -6,6 +6,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web;
 
 namespace PetPickr.Models
 {
@@ -35,6 +36,9 @@ namespace PetPickr.Models
         [Required]
         public int ShelterId { get; set; }
         public virtual Shelter Shelter { get; set; }
+        [Display(Name = "Enter a link to an image of the cat. Link must be public.")]
+
+        public string CatImage { get; set; }
 
     }
 }

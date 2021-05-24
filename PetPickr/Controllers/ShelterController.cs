@@ -1,4 +1,5 @@
-﻿using PetPickr.Models;
+﻿using Microsoft.AspNet.Identity;
+using PetPickr.Models;
 using PetPickr.Services;
 using System;
 using System.Collections.Generic;
@@ -17,6 +18,7 @@ namespace PetPickr.Controllers
         // GET: Shelter
         public ActionResult Index()
         {
+            //var userId = Guid.Parse(User.Identity.GetUserId());
             var service = new ShelterService();
             var model = service.GetShelters();
             return View(model);
@@ -34,6 +36,7 @@ namespace PetPickr.Controllers
         public ActionResult Create(ShelterCreate model)
         {
             if (!ModelState.IsValid) return View(model);
+            //var userId = Guid.Parse(User.Identity.GetUserId());
             var service = new ShelterService();
             if (service.CreateShelter(model))
             {

@@ -3,6 +3,7 @@ using PetPickr.Models;
 using PetPickr.Services;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -39,8 +40,8 @@ namespace PetPickr.Controllers
             }
             return View(cats.ToList());
         }
-     
-    
+
+
 
         //GET
         public ActionResult Create()
@@ -76,9 +77,11 @@ namespace PetPickr.Controllers
         public ActionResult Create(CatCreate model)
         {
             if (!ModelState.IsValid) return View(model);
+
             var service = new CatService();
             if (service.CreateCat(model))
             {
+
                 TempData["SaveResult"] = "Your cat was added.";
                 return RedirectToAction("Index");
             };
@@ -121,7 +124,7 @@ namespace PetPickr.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [Authorize(Roles ="Admin")]
+        [Authorize(Roles = "Admin")]
         public ActionResult Edit(int id, CatEdit model)
         {
             if (!ModelState.IsValid) return View(model);

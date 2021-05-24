@@ -4,13 +4,16 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
+<h2>Details about @Html.DisplayFor(model => model.CatName)</h2>
 
-<div>
-    <h4>CatDetail</h4>
+<div class="DetailFull">
     <hr />
+    <div class="DetailsImage">
+        <img src="@Url.Content(Model.CatImage)" alt="No image available" width="300" height="300" />
+    </div>
+
     <dl class="dl-horizontal">
-        
+
 
         <dt>
             @Html.DisplayNameFor(model => model.CatName)
@@ -52,6 +55,7 @@
             @Html.DisplayFor(model => model.CatPrice)
         </dd>
 
+
         <dt>
             @Html.DisplayNameFor(model => model.ShelterName)
         </dt>
@@ -61,14 +65,22 @@
         </dd>
 
     </dl>
+
+    <div class="DetailsOptions">
+        <h3>
+            @if (User.Identity.IsAuthenticated && User.IsInRole("Admin"))
+            {
+                @Html.ActionLink("Edit", "Edit", new { id = Model.CatId })}
+            <hr />
+        </h3>
+        <h3>
+            @Html.ActionLink("Back to List", "Index")
+        </h3>
+        <hr />
+        <h3>
+            @Html.ActionLink("Interested?", "Details", "Shelter", new { id = @Model.ShelterId }, null)
+        </h3>
+        <hr />
+
+    </div>
 </div>
-<p>
-    @if (User.Identity.IsAuthenticated && User.IsInRole("Admin"))
-    {
-        @Html.ActionLink("Edit | ", "Edit", new { id = Model.CatId })
-    }
-    @Html.ActionLink("Back to List", "Index") |
-
-    @Html.ActionLink("Interested?", "Details", "Shelter", new { id = @Model.ShelterId }, null)
-
-</p>

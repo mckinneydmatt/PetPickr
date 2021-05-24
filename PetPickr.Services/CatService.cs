@@ -5,27 +5,26 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web;
 
 namespace PetPickr.Services
 {
     public class CatService
     {
-        
+
         public bool CreateCat(CatCreate model)
         {
-
-            
-
-            var entity =
-                new Cat()
+            var entity = new Cat()
                 {
                     CatName = model.CatName,
                     CatSex = model.CatSex,
                     CatWeight = model.CatWeight,
                     CatAge = model.CatAge,
                     CatPrice = model.CatPrice,
-                    ShelterId = model.ShelterId
+                    ShelterId = model.ShelterId,
+                    CatImage = model.CatImage,
                 };
+          
 
             using (var ctx = new ApplicationDbContext())
             {
@@ -36,8 +35,8 @@ namespace PetPickr.Services
 
         public IEnumerable<CatListItem> GetCats()
         {
-            
-        
+
+
             using (var ctx = new ApplicationDbContext())
             {
                 var query =
@@ -75,7 +74,8 @@ namespace PetPickr.Services
                     CatAge = cat.CatAge,
                     CatPrice = cat.CatPrice,
                     ShelterName = cat.Shelter.ShelterName,
-                    ShelterId = cat.ShelterId
+                    ShelterId = cat.ShelterId,
+                    CatImage = cat.CatImage
                 };
             }
         }
