@@ -20,9 +20,9 @@ namespace PetPickr
             ApplicationDbContext context = new ApplicationDbContext();
 
             var roleManager = new RoleManager<IdentityRole>(new RoleStore<IdentityRole>(context));
-            //var UserManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(context));
+            var UserManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(context));
 
-            //Here we create a Admin super user who will maintain the website                   
+            ////Here we create a Admin super user who will maintain the website
 
             //var user = new ApplicationUser();
             //user.UserName = "admin";
@@ -33,14 +33,12 @@ namespace PetPickr
             //var chkUser = UserManager.Create(user, userPWD);
 
             ////Add default User to Role Admin    
-            //if (chkUser.Succeeded)
-            //{
-            //    var result1 = UserManager.AddToRole(user.Id, "Admin");
+            // UserManager.AddToRole(UserManager.FindByEmail(user.Email).Id, "Admin");
 
-            //}
+        
 
 
-                // Creating Admin role     
+            // Creating Admin role     
             if (!roleManager.RoleExists("Admin"))
             {
                 var role = new IdentityRole();

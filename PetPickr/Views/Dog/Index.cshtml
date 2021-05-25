@@ -3,14 +3,17 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>Available dogs</h2>
+@if (User.Identity.IsAuthenticated && User.IsInRole("Admin"))
+{
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Add a dog", "Create")
 </p>
+}
 <table class="table">
     <tr>
-      
+
         <th>
             @Html.ActionLink("Name", "Index", new { sortOrder = ViewBag.NameSortParm })
         </th>
@@ -18,8 +21,8 @@
             @Html.DisplayNameFor(model => model.DogBreed)
 
         </th>
-       
-       
+
+
         <th>
             @Html.ActionLink("Price", "Index", new { sortOrder = ViewBag.PriceSortParm })
         </th>
@@ -32,15 +35,15 @@
     @foreach (var item in Model)
     {
         <tr>
-           
+
             <td>
                 @Html.ActionLink(item.DogName, "Details", new { id = item.DogId })
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.DogBreed)
             </td>
-          
-            
+
+
             <td>
                 @Html.DisplayFor(modelItem => item.DogPrice)
             </td>

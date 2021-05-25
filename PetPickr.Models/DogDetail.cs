@@ -26,6 +26,7 @@ namespace PetPickr.Models
         public double DogPrice { get; set; }
         [Display(Name = "Shelter Name")]
         public string ShelterName { get; set; }
+        public string DogImage { get; set; }
         public int ShelterId { get; set; }
     }
 }

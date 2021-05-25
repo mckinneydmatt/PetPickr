@@ -21,6 +21,7 @@ namespace PetPickr.Services
                     DogWeight = model.DogWeight,
                     DogAge = model.DogAge,
                     DogPrice = model.DogPrice,
+                    DogImage = model.DogImage,
                     ShelterId = model.ShelterId
                 };
 
@@ -45,7 +46,6 @@ namespace PetPickr.Services
                                     DogId = e.DogId,
                                     DogName = e.DogName,
                                     DogBreed = e.DogBreed,
-                                 
                                     DogPrice = e.DogPrice,
                                     ShelterName = e.Shelter.ShelterName
                                 }
@@ -70,6 +70,7 @@ namespace PetPickr.Services
                     DogWeight = dog.DogWeight,
                     DogAge = dog.DogAge,
                     DogPrice = dog.DogPrice,
+                    DogImage = dog.DogImage,
                     ShelterId = dog.ShelterId,
                     ShelterName = dog.Shelter.ShelterName
                  };
@@ -88,6 +89,7 @@ namespace PetPickr.Services
                 entity.DogSex = model.DogSex;
                 entity.DogWeight = model.DogWeight;
                 entity.DogAge = model.DogAge;
+                entity.DogImage = model.DogImage;
                 entity.DogPrice = model.DogPrice;
                 entity.ShelterId = model.ShelterId;
 

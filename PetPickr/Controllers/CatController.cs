@@ -48,19 +48,6 @@ namespace PetPickr.Controllers
         {
             using (var ctx = new ApplicationDbContext())
             {
-
-                //List<SelectListItem> listOfShelters = new List<SelectListItem>();
-                //foreach (var c in ctx.Shelters)
-                //{
-                //    listOfShelters.Add(new SelectListItem
-                //    {
-                //        Text = c.ShelterName,
-                //        Value = c.ShelterId.ToString()
-                //    });
-                //}
-                ////ctx.Shelters.Select(s => new SelectListItem() { Text = s.ShelterName, Value = s.ShelterId.ToString() });
-                //var shelters = ctx.Shelters.Select(s => new SelectListItem() { Text = s.ShelterName, Value = s.ShelterId.ToString() }).ToList(); // listOfShelters;
-
                 ViewBag.ShelterList = ctx.Shelters.Select
                     (s => new SelectListItem()
                     {
@@ -117,6 +104,7 @@ namespace PetPickr.Controllers
                         CatWeight = detail.CatWeight,
                         CatAge = detail.CatAge,
                         CatPrice = detail.CatPrice,
+                        CatImage = detail.CatImage,
                         ShelterId = detail.ShelterId
 
                     };

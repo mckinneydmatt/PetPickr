@@ -105,6 +105,7 @@ namespace PetPickr.Controllers
                         DogWeight = detail.DogWeight,
                         DogAge = detail.DogAge,
                         DogPrice = detail.DogPrice,
+                        DogImage = detail.DogImage,
                         ShelterId = detail.ShelterId
 
                     };

@@ -95,7 +95,7 @@ namespace PetPickr.Models
         public string ConfirmPassword { get; set; }
 
         [Required]
-        [Display(Name = "UserRoles")]
+        [Display(Name = "User Role")]
         public string Role { get; set; }
     }
 

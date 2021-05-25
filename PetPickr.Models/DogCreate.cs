@@ -32,7 +32,11 @@ namespace PetPickr.Models
         public double DogPrice { get; set; }
         [ForeignKey(nameof(Shelter))]
         [Required]
+
         public int ShelterId { get; set; }
+        [Display(Name = "Enter a link to an image of the dog. Link must be public.")]
+        [Required]
+        public string DogImage { get; set; }
         public virtual Shelter Shelter { get; set; }
     }
 }

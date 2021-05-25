@@ -6,8 +6,11 @@
 
 <h2>Details about @Html.DisplayFor(model => model.DogName)</h2>
 
-<div>
-    
+<div class="detail-full">
+    <hr />
+    <div class="detail-image">
+        <img src="@Url.Content(Model.DogImage)" alt="No image available"/>
+    </div> 
     <hr />
 
 
@@ -63,16 +66,21 @@
         </dd>
 
     </dl>
+    <div class="detail-options">
+        <h3>
+            @if (User.Identity.IsAuthenticated && User.IsInRole("Admin"))
+            {
+                @Html.ActionLink("Edit", "Edit", new { id = Model.DogId })}
+            <hr />
+        </h3>
+        <h3>
+            @Html.ActionLink("Back to List", "Index")
+        </h3>
+        <hr />
+        <h3>
+            @Html.ActionLink("Interested?", "Details", "Shelter", new { id = @Model.ShelterId }, null)
+        </h3>
+        <hr />
+
+    </div>
 </div>
-<p>
-    @if (User.Identity.IsAuthenticated && User.IsInRole("Admin"))
-    {
-        @Html.ActionLink("Edit | ", "Edit", new { id = Model.DogId })
-    }
-    @Html.ActionLink("Back to List", "Index") |
-
-    @Html.ActionLink("Interested?", "Details", "Shelter", new { id = @Model.ShelterId }, null)
-
-
-    
-</p>

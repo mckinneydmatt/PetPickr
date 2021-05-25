@@ -25,6 +25,8 @@ namespace PetPickr.Models
         public int DogAge { get; set; }
         [Display(Name = "Price")]
         public double DogPrice { get; set; }
+        [Display(Name = "Enter a link to an image of the dog. Link must be public.")]
+        public string DogImage { get; set; }
         public int ShelterId { get; set; }
         public virtual Shelter Shelter { get; set; }
 

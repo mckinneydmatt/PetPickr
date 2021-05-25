@@ -6,11 +6,12 @@
 
 <h2>Details about @Html.DisplayFor(model => model.CatName)</h2>
 
-<div class="DetailFull">
+<div class="detail-full">
     <hr />
-    <div class="DetailsImage">
-        <img src="@Url.Content(Model.CatImage)" alt="No image available" width="300" height="300" />
+    <div class="detail-image">
+        <img src="@Url.Content(Model.CatImage)" alt="No image available">
     </div>
+    <hr />
 
     <dl class="dl-horizontal">
 
@@ -66,7 +67,7 @@
 
     </dl>
 
-    <div class="DetailsOptions">
+    <div class="detail-options">
         <h3>
             @if (User.Identity.IsAuthenticated && User.IsInRole("Admin"))
             {

@@ -93,6 +93,8 @@ namespace PetPickr.Services
                 entity.CatAge = model.CatAge;
                 entity.CatPrice = model.CatPrice;
                 entity.ShelterId = model.ShelterId;
+                entity.CatImage = model.CatImage;
+
 
                 return ctx.SaveChanges() == 1;
             }

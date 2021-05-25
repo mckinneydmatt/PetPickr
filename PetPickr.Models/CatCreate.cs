@@ -37,7 +37,7 @@ namespace PetPickr.Models
         public int ShelterId { get; set; }
         public virtual Shelter Shelter { get; set; }
         [Display(Name = "Enter a link to an image of the cat. Link must be public.")]
-
+        [Required]
         public string CatImage { get; set; }
 
     }
