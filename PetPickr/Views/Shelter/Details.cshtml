@@ -1,0 +1,64 @@
+﻿@model PetPickr.Models.ShelterDetail
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details about @Html.DisplayFor(model => model.ShelterName)</h2>
+@*<div id="googleMap" style="width:25%;height:200px;"></div>
+
+    <script>
+        function myMap() {
+            var mapProp = {
+                center: new google.maps.LatLng(51.508742, -0.120850),
+                zoom: 5,
+            };
+            var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
+        }
+    </script>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDoWSGjLO5PZHw5uk9psxlBRlUzhbcJjyM&callback=myMap"></script>*@
+
+
+<hr />
+<dl class="dl-horizontal">
+    <dt>
+        @Html.DisplayNameFor(model => model.ShelterId)
+    </dt>
+
+    <dd>
+        @Html.DisplayFor(model => model.ShelterId)
+    </dd>
+
+    <dt>
+        @Html.DisplayNameFor(model => model.ShelterName)
+    </dt>
+
+    <dd>
+        @Html.DisplayFor(model => model.ShelterName)
+    </dd>
+
+    <dt>
+        @Html.DisplayNameFor(model => model.ShelterPhoneNumber)
+    </dt>
+
+    <dd>
+        @Html.DisplayFor(model => model.ShelterPhoneNumber)
+    </dd>
+
+    <dt>
+        @Html.DisplayNameFor(model => model.ShelterAddress)
+    </dt>
+
+    <dd>
+        @Html.DisplayFor(model => model.ShelterAddress)
+    </dd>
+
+</dl>
+<p>
+    @if (User.Identity.IsAuthenticated && User.IsInRole("Admin"))
+    {
+        @Html.ActionLink("Edit | ", "Edit", new { Model.ShelterId })
+        @Html.ActionLink("Back to List", "Index")
+    }
+</p>

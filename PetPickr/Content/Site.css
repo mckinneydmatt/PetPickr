@@ -4,21 +4,249 @@
 }
 
 /* Set padding to keep content from hitting the edges */
+
+.container {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
 .body-content {
     padding-left: 15px;
     padding-right: 15px;
 }
 
-/* Override the default bootstrap behavior where horizontal description lists 
-   will truncate terms that are too long to fit in the left column 
-*/
-.dl-horizontal dt {
-    white-space: normal;
+/*details page for dogs and cats*/
+
+.detail-full {
+    Display: flex;
 }
 
-/* Set width on the form input elements since they're 100% wide by default */
-input,
-select,
-textarea {
-    max-width: 280px;
+.detail-image {
+    width: min-content;
 }
+
+    .detail-image img {
+        border: 2px solid black;
+        width: 600px;
+        height: auto;
+        margin: 0px;
+    }
+
+.detail-options {
+    margin-top: 20px;
+/*    border: 2px solid blue;
+*/}
+
+dl {
+    margin-top: 20px;
+    padding-right: 1px;
+    padding-top: 15px;
+    margin-bottom: 0px;
+    margin-right: 0px;
+/*    border: 5px solid red;*/
+padding-right: 100px;
+    width: 400px;
+    float: left;
+    font-size: 18px;
+}
+
+dt,
+dd {
+    line-height: 1.42857143;
+}
+
+dt {
+    font-weight: 700;
+}
+
+dd {
+    margin-left: 0;
+    margin-right: 0px;
+}
+
+@media (min-width: 768px) {
+    .dl-horizontal dt {
+        float: left;
+        width: 160px;
+        clear: left;
+        text-align: right;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    .dl-horizontal dd {
+        margin-left: 200px;
+        width:160px;
+    }
+
+    /*header stuff*/
+    .header-photo {
+        position: relative;
+        margin-top: 10px;
+        left:0px;
+    }
+
+        .header-photo .header-text-box {
+            width: 350px;
+            height: 400px;
+            /*        border: 1px solid #000;
+*/ background: #e3e3e3;
+            z-index: 0;
+            position: absolute;
+            top: 50px;
+            right: 100px;
+            border-radius: 30px;
+            background-color: rgba(255,255,255,0.3);
+        }
+
+            .header-photo .header-text-box h1 {
+                font-size: 80px;
+                color: #1f1f1f;
+                z-index: 1;
+                font-weight: 700;
+                text-align: center;
+            }
+
+        .header-photo img {
+            z-index: -1;
+            width: 100%;
+
+            margin: 0px;
+            height: auto;
+        }
+    /*buttons*/
+    .btn-default {
+        color: #ffffff;
+        background-color: #18bc9c;
+        border-color: #95a5a6;
+    }
+
+        .btn-default:focus,
+        .btn-default.focus {
+            color: #ffffff;
+            background-color: #798d8f;
+            border-color: #566566;
+        }
+
+        .btn-default:hover {
+            color: #ffffff;
+            background-color: #798d8f;
+            border-color: #74898a;
+        }
+
+        .btn-default:active,
+        .btn-default.active,
+        .open > .dropdown-toggle.btn-default {
+            color: #ffffff;
+            background-color: #798d8f;
+            background-image: none;
+            border-color: #74898a;
+        }
+
+            .btn-default:active:hover,
+            .btn-default.active:hover,
+            .open > .dropdown-toggle.btn-default:hover,
+            .btn-default:active:focus,
+            .btn-default.active:focus,
+            .open > .dropdown-toggle.btn-default:focus,
+            .btn-default:active.focus,
+            .btn-default.active.focus,
+            .open > .dropdown-toggle.btn-default.focus {
+                color: #ffffff;
+                background-color: #687b7c;
+                border-color: #566566;
+            }
+
+        .btn-default.disabled:hover,
+        .btn-default[disabled]:hover,
+        fieldset[disabled] .btn-default:hover,
+        .btn-default.disabled:focus,
+        .btn-default[disabled]:focus,
+        fieldset[disabled] .btn-default:focus,
+        .btn-default.disabled.focus,
+        .btn-default[disabled].focus,
+        fieldset[disabled] .btn-default.focus {
+            background-color: #95a5a6;
+            border-color: #95a5a6;
+        }
+
+        .btn-default .badge {
+            color: #95a5a6;
+            background-color: #ffffff;
+        }
+
+    /* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+    .dl-horizontal dt {
+        white-space: normal;
+    }
+
+    .jumbotron {
+        padding-top: 30px;
+        padding-bottom: 30px;
+        margin-bottom: 30px;
+        color: inherit;
+        background-color: #18bc9c;
+    }
+
+
+        .jumbotron h1,
+        .jumbotron .h1 {
+            color: inherit;
+        }
+
+        .jumbotron p {
+            margin-bottom: 15px;
+            font-size: 23px;
+            font-weight: 200;
+        }
+
+        .jumbotron > hr {
+            border-top-color: #cfd9db;
+        }
+
+    .container .jumbotron,
+    .container-fluid .jumbotron {
+        padding-right: 15px;
+        padding-left: 15px;
+        border-radius: 6px;
+    }
+
+    .jumbotron .container {
+        max-width: 100%;
+    }
+
+    @media screen and (min-width: 768px) {
+        .jumbotron {
+            padding-top: 48px;
+            padding-bottom: 48px;
+        }
+
+        .container .jumbotron,
+        .container-fluid .jumbotron {
+            padding-right: 60px;
+            padding-left: 60px;
+        }
+
+        .jumbotron h1,
+        .jumbotron .h1 {
+            font-size: 68px;
+        }
+    }
+
+    .page-header {
+        padding-bottom: 9.5px;
+        margin: 42px 0 21px;
+        border-bottom: 1px solid transparent;
+    }
+
+    /* Set width on the form input elements since they're 100% wide by default */
+    input,
+    select,
+    textarea {
+        max-width: 280px;
+    }

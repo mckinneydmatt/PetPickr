@@ -1,0 +1,86 @@
+﻿@model PetPickr.Models.DogDetail
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details about @Html.DisplayFor(model => model.DogName)</h2>
+
+<div class="detail-full">
+    <hr />
+    <div class="detail-image">
+        <img src="@Url.Content(Model.DogImage)" alt="No image available"/>
+    </div> 
+    <hr />
+
+
+    <dl class="dl-horizontal">
+
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DogName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DogName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DogBreed)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DogBreed)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DogWeight)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DogWeight)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DogAge)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DogAge)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DogPrice)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DogPrice)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ShelterName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ShelterName)
+        </dd>
+
+    </dl>
+    <div class="detail-options">
+        <h3>
+            @if (User.Identity.IsAuthenticated && User.IsInRole("Admin"))
+            {
+                @Html.ActionLink("Edit", "Edit", new { id = Model.DogId })}
+            <hr />
+        </h3>
+        <h3>
+            @Html.ActionLink("Back to List", "Index")
+        </h3>
+        <hr />
+        <h3>
+            @Html.ActionLink("Interested?", "Details", "Shelter", new { id = @Model.ShelterId }, null)
+        </h3>
+        <hr />
+
+    </div>
+</div>

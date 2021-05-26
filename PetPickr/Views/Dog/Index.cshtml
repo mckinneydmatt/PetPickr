@@ -1,0 +1,68 @@
+﻿@model IEnumerable<PetPickr.Models.DogListItem>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Available dogs</h2>
+@if (User.Identity.IsAuthenticated && User.IsInRole("Admin"))
+{
+
+<p>
+    @Html.ActionLink("Add a dog", "Create")
+</p>
+}
+<table class="table">
+    <tr>
+
+        <th>
+            @Html.ActionLink("Name", "Index", new { sortOrder = ViewBag.NameSortParm })
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DogBreed)
+
+        </th>
+
+
+        <th>
+            @Html.ActionLink("Price", "Index", new { sortOrder = ViewBag.PriceSortParm })
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ShelterName)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+
+            <td>
+                @Html.ActionLink(item.DogName, "Details", new { id = item.DogId })
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DogBreed)
+            </td>
+
+
+            <td>
+                @Html.DisplayFor(modelItem => item.DogPrice)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ShelterName)
+            </td>
+            <td>
+
+                @if (User.Identity.IsAuthenticated && User.IsInRole("Admin"))
+                {
+                    @Html.ActionLink("Edit |", "Edit", new { id = item.DogId });
+                }
+                @Html.ActionLink("Details", "Details", new { id = item.DogId })
+                @if (User.Identity.IsAuthenticated && User.IsInRole("Admin"))
+                {
+                    @Html.ActionLink("| Delete", "Delete", new { id = item.DogId })
+                }
+            </td>
+        </tr>
+    }
+
+</table>
