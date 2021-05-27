@@ -60,45 +60,9 @@
     <Compile Include="Cat.cs" />
     <Compile Include="Dog.cs" />
     <Compile Include="IdentityModels.cs" />
-    <Compile Include="Migrations\202105181705581_Tuesday fourth migration.cs" />
-    <Compile Include="Migrations\202105181705581_Tuesday fourth migration.Designer.cs">
-      <DependentUpon>202105181705581_Tuesday fourth migration.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202105190117280_Tuesday last migration.cs" />
-    <Compile Include="Migrations\202105190117280_Tuesday last migration.Designer.cs">
-      <DependentUpon>202105190117280_Tuesday last migration.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202105191519425_Wednesday first migration.cs" />
-    <Compile Include="Migrations\202105191519425_Wednesday first migration.Designer.cs">
-      <DependentUpon>202105191519425_Wednesday first migration.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202105191603359_Wednesday second migration.cs" />
-    <Compile Include="Migrations\202105191603359_Wednesday second migration.Designer.cs">
-      <DependentUpon>202105191603359_Wednesday second migration.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202105192058479_Wednesday third migration.cs" />
-    <Compile Include="Migrations\202105192058479_Wednesday third migration.Designer.cs">
-      <DependentUpon>202105192058479_Wednesday third migration.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202105192133375_Wednesday fourth migration.cs" />
-    <Compile Include="Migrations\202105192133375_Wednesday fourth migration.Designer.cs">
-      <DependentUpon>202105192133375_Wednesday fourth migration.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202105251701318_Tuesday first migration.cs" />
-    <Compile Include="Migrations\202105251701318_Tuesday first migration.Designer.cs">
-      <DependentUpon>202105251701318_Tuesday first migration.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202105251713529_Tuesday second migration.cs" />
-    <Compile Include="Migrations\202105251713529_Tuesday second migration.Designer.cs">
-      <DependentUpon>202105251713529_Tuesday second migration.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202105261754247_wednesday afternoon migOne.cs" />
-    <Compile Include="Migrations\202105261754247_wednesday afternoon migOne.designer.cs">
-      <DependentUpon>202105261754247_wednesday afternoon migOne.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202105261846481_wednesday afternoon migTwo.cs" />
-    <Compile Include="Migrations\202105261846481_wednesday afternoon migTwo.designer.cs">
-      <DependentUpon>202105261846481_wednesday afternoon migTwo.cs</DependentUpon>
+    <Compile Include="Migrations\202105270002047_Wednesday 755.cs" />
+    <Compile Include="Migrations\202105270002047_Wednesday 755.designer.cs">
+      <DependentUpon>202105270002047_Wednesday 755.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -109,35 +73,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202105181705581_Tuesday fourth migration.resx">
-      <DependentUpon>202105181705581_Tuesday fourth migration.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202105190117280_Tuesday last migration.resx">
-      <DependentUpon>202105190117280_Tuesday last migration.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202105191519425_Wednesday first migration.resx">
-      <DependentUpon>202105191519425_Wednesday first migration.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202105191603359_Wednesday second migration.resx">
-      <DependentUpon>202105191603359_Wednesday second migration.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202105192058479_Wednesday third migration.resx">
-      <DependentUpon>202105192058479_Wednesday third migration.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202105192133375_Wednesday fourth migration.resx">
-      <DependentUpon>202105192133375_Wednesday fourth migration.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202105251701318_Tuesday first migration.resx">
-      <DependentUpon>202105251701318_Tuesday first migration.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202105251713529_Tuesday second migration.resx">
-      <DependentUpon>202105251713529_Tuesday second migration.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202105261754247_wednesday afternoon migOne.resx">
-      <DependentUpon>202105261754247_wednesday afternoon migOne.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202105261846481_wednesday afternoon migTwo.resx">
-      <DependentUpon>202105261846481_wednesday afternoon migTwo.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202105270002047_Wednesday 755.resx">
+      <DependentUpon>202105270002047_Wednesday 755.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
